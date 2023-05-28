@@ -1,2 +1,39 @@
 <div id="cat">
 </div>
+
+<script>
+    prefixes = [
+    "Cloud",
+    "Dapple",
+    "Bright",
+    "Brave",
+    "Fire",
+    "Tree",
+    "Shadow"
+  ];
+
+  suffixes = [
+    "tail",
+    "heart",
+    "wing",
+    "wind",
+    "stream",
+    "branch",
+    "feather"
+  ]
+
+  function RandArray(array){
+      var rand = Math.random()*array.length | 0;
+      var rValue = array[rand];
+      return rValue;
+  }
+
+  function getName() {
+      return RandArray(prefixes) + RandArray(suffixes)
+  }
+
+  var img = document.createElement("img");
+  img.src = "https://cataas.com/cat/says/"+getName();
+  var src = document.getElementById("cat");
+  src.appendChild(img);
+</script>
